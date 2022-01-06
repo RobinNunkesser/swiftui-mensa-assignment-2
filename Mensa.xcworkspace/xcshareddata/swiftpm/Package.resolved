@@ -1,0 +1,34 @@
+{
+  "object": {
+    "pins": [
+      {
+        "package": "MockMealAdapters",
+        "repositoryURL": "https://github.com/Italbytz/spm-adapters-meal-mock.git",
+        "state": {
+          "branch": null,
+          "revision": "6997490da2ec1ba42c570322e515c74d90aae641",
+          "version": "0.0.1"
+        }
+      },
+      {
+        "package": "CommonPorts",
+        "repositoryURL": "https://github.com/Italbytz/spm-ports-common.git",
+        "state": {
+          "branch": null,
+          "revision": "1c4bfa422ce83b9bcba9de2ceb1ad7ecaf85ca22",
+          "version": "0.0.5"
+        }
+      },
+      {
+        "package": "MealPorts",
+        "repositoryURL": "https://github.com/Italbytz/spm-ports-meal.git",
+        "state": {
+          "branch": null,
+          "revision": "5fb3aba08bb033a623b467a4fe43303456c1c2cf",
+          "version": "0.0.5"
+        }
+      }
+    ]
+  },
+  "version": 1
+}
