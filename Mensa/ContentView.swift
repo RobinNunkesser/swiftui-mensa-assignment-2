@@ -1,35 +1,19 @@
-//
-//  ContentView.swift
-//  Mensa
-//
-//  Created by Prof. Dr. Nunkesser, Robin on 06.01.22.
-//
-
 import SwiftUI
-import MockMealAdapters
-import MealPorts
 
 struct ContentView: View {
+    @State private var selection = 0
+    
     var body: some View {
-        Text("Hello, world!")
-            .padding()
-            .onAppear {
-                Task(priority: .medium) {
-                    do {
-                        try success(meals: await MockMealDataSource().retrieveAll())
-                    } catch let error {
-                        failure(error: error)
-                    }
-                }
+        TabView(selection: $selection){
+            MensaView().tag(0).tabItem {
+                Image(systemName: "1.square.fill")
+                Text("First")
             }
-    }
-    
-    func success(meals: [Meal]) {
-        debugPrint(meals)
-    }
-    
-    func failure(error: Error) {
-        debugPrint(error.localizedDescription)
+            SettingsView().tag(1).tabItem {
+                Image(systemName: "2.square.fill")
+                Text("Second")
+            }
+        }
     }
 }
 
