@@ -17,6 +17,7 @@ struct MealRow: View {
         HStack {
             URLImage(url) { image in
                 image
+                    .resizable()
                     .aspectRatio(contentMode: .fit)
             }
             VStack(alignment: .leading) {

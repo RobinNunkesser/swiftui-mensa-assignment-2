@@ -23,10 +23,9 @@ struct MensaView: View {
             }
         }.navigationBarTitle("Collections")
             .onAppear {
-                viewModel.categories.append(CategoryViewModel(name: "Test", meals: [MealViewModel(title: "T", subtitle: "S", image: URL(string: "https://www.apple.com")!)]))
                 Task(priority: .medium) {
                     do {
-                        try success(meals: await MockMealDataSource().retrieveAll())
+                        try success(meals: await MockGetMealsCommand().execute(inDTO: MealQueryDTO(mensa: 1, date: Date())))
                     } catch let error {
                         failure(error: error)
                     }
@@ -34,8 +33,16 @@ struct MensaView: View {
             }
     }
     
-    func success(meals: [Meal]) {
-        debugPrint(meals)
+    func success(meals: [MealCollection]) {
+        viewModel.categories = meals.map({
+            collection in
+            CategoryViewModel(name: collection.name, meals: collection.meals.map({
+                meal in
+                MealViewModel(title: meal.name, subtitle: "\(meal.price.employees!)", image: URL(string: meal.image)!)
+                
+            }))
+            
+        })        
     }
     
     func failure(error: Error) {

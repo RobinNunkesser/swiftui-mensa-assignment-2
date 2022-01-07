@@ -6,8 +6,8 @@
         "repositoryURL": "https://github.com/Italbytz/spm-adapters-meal-mock.git",
         "state": {
           "branch": null,
-          "revision": "6997490da2ec1ba42c570322e515c74d90aae641",
-          "version": "0.0.1"
+          "revision": "f6c04950d55002f7031b168d6cfef9a916189868",
+          "version": "0.0.3"
         }
       },
       {
@@ -24,8 +24,8 @@
         "repositoryURL": "https://github.com/Italbytz/spm-ports-meal.git",
         "state": {
           "branch": null,
-          "revision": "5fb3aba08bb033a623b467a4fe43303456c1c2cf",
-          "version": "0.0.5"
+          "revision": "6d5e384946687c9430de7e069fbc6a49d38deafb",
+          "version": "0.0.6"
         }
       },
       {
