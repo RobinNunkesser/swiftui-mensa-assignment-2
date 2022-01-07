@@ -23,6 +23,7 @@
 		6F84A37F2788348A00279DF1 /* CategoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F84A37E2788348A00279DF1 /* CategoryViewModel.swift */; };
 		6F84A381278834EB00279DF1 /* MensaViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F84A380278834EB00279DF1 /* MensaViewModel.swift */; };
 		6F84A385278847FD00279DF1 /* MealQueryDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F84A384278847FD00279DF1 /* MealQueryDTO.swift */; };
+		6F84A38827885C1C00279DF1 /* OpenMensaMealAdapters in Frameworks */ = {isa = PBXBuildFile; productRef = 6F84A38727885C1C00279DF1 /* OpenMensaMealAdapters */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,6 +68,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6F84A38827885C1C00279DF1 /* OpenMensaMealAdapters in Frameworks */,
 				6F84A37D2788344E00279DF1 /* URLImage in Frameworks */,
 				6F84A3722787248400279DF1 /* MockMealAdapters in Frameworks */,
 			);
@@ -171,6 +173,7 @@
 			packageProductDependencies = (
 				6F84A3712787248400279DF1 /* MockMealAdapters */,
 				6F84A37C2788344E00279DF1 /* URLImage */,
+				6F84A38727885C1C00279DF1 /* OpenMensaMealAdapters */,
 			);
 			productName = Mensa;
 			productReference = 6F84A2D7278714A400279DF1 /* Mensa.app */;
@@ -247,6 +250,7 @@
 			packageReferences = (
 				6F84A3702787248400279DF1 /* XCRemoteSwiftPackageReference "spm-adapters-meal-mock" */,
 				6F84A37B2788344E00279DF1 /* XCRemoteSwiftPackageReference "url-image" */,
+				6F84A38627885C1C00279DF1 /* XCRemoteSwiftPackageReference "spm-adapters-meal-openmensa" */,
 			);
 			productRefGroup = 6F84A2D8278714A400279DF1 /* Products */;
 			projectDirPath = "";
@@ -632,7 +636,7 @@
 			repositoryURL = "https://github.com/Italbytz/spm-adapters-meal-mock.git";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 0.0.3;
+				minimumVersion = 0.0.5;
 			};
 		};
 		6F84A37B2788344E00279DF1 /* XCRemoteSwiftPackageReference "url-image" */ = {
@@ -641,6 +645,14 @@
 			requirement = {
 				kind = upToNextMajorVersion;
 				minimumVersion = 3.0.0;
+			};
+		};
+		6F84A38627885C1C00279DF1 /* XCRemoteSwiftPackageReference "spm-adapters-meal-openmensa" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Italbytz/spm-adapters-meal-openmensa.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.0.2;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
@@ -655,6 +667,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 6F84A37B2788344E00279DF1 /* XCRemoteSwiftPackageReference "url-image" */;
 			productName = URLImage;
+		};
+		6F84A38727885C1C00279DF1 /* OpenMensaMealAdapters */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 6F84A38627885C1C00279DF1 /* XCRemoteSwiftPackageReference "spm-adapters-meal-openmensa" */;
+			productName = OpenMensaMealAdapters;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

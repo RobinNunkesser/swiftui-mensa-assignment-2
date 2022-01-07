@@ -6,8 +6,26 @@
         "repositoryURL": "https://github.com/Italbytz/spm-adapters-meal-mock.git",
         "state": {
           "branch": null,
-          "revision": "f6c04950d55002f7031b168d6cfef9a916189868",
-          "version": "0.0.3"
+          "revision": "3ef9acb17f80a3c600f6426c136be7af9f729b25",
+          "version": "0.0.5"
+        }
+      },
+      {
+        "package": "OpenMensaMealAdapters",
+        "repositoryURL": "https://github.com/Italbytz/spm-adapters-meal-openmensa.git",
+        "state": {
+          "branch": null,
+          "revision": "47d0997ac7661f180e8629f63f25595fc0ffe369",
+          "version": "0.0.2"
+        }
+      },
+      {
+        "package": "OpenMensaInfrastructure",
+        "repositoryURL": "https://github.com/Italbytz/spm-infrastructure-openmensa.git",
+        "state": {
+          "branch": null,
+          "revision": "4449c02e334d8d3d4e3e84fd6bbefcd5985c2f07",
+          "version": "0.0.5"
         }
       },
       {
@@ -24,8 +42,8 @@
         "repositoryURL": "https://github.com/Italbytz/spm-ports-meal.git",
         "state": {
           "branch": null,
-          "revision": "6d5e384946687c9430de7e069fbc6a49d38deafb",
-          "version": "0.0.6"
+          "revision": "e4ed4d4ae9f96d891e8d90ed4563a6342aa7281e",
+          "version": "0.0.7"
         }
       },
       {
