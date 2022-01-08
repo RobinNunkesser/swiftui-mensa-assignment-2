@@ -13,6 +13,9 @@ import OpenMensaMealAdapters
 struct MensaView: View {
     @EnvironmentObject var appEnvironment : AppEnvironment
     @StateObject var viewModel = MensaViewModel()
+    @State private var showError = false
+    @State private var errorText = ""
+
     
     var body: some View {
         List {
@@ -39,12 +42,17 @@ struct MensaView: View {
                 }
             }
             .onChange(of: appEnvironment.status) { newValue in
-                setCategories()                
+                setCategories()
+            }
+            .alert(isPresented: $showError) { () -> Alert in
+                Alert(title: Text("Error"), message: Text(errorText),
+                      dismissButton: .cancel(Text("OK")))
             }
     }
     
     func success(meals: [MealCollection]) {
         viewModel.originalMeals = meals
+        setCategories()
     }
     
     func setCategories() {
@@ -52,7 +60,8 @@ struct MensaView: View {
     }
     
     func failure(error: Error) {
-        debugPrint(error.localizedDescription)
+        errorText = error.localizedDescription
+        showError.toggle()
     }
 }
 
