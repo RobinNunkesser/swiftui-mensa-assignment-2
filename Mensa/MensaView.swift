@@ -8,7 +8,6 @@
 import SwiftUI
 import MockMealAdapters
 import MealPorts
-import OpenMensaMealAdapters
 
 struct MensaView: View {
     @EnvironmentObject var appEnvironment : AppEnvironment
