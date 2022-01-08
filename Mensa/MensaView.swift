@@ -13,6 +13,12 @@ import OpenMensaMealAdapters
 struct MensaView: View {
     @StateObject var viewModel = MensaViewModel()
     
+    enum Keys : String {
+        case status = "status_preference"
+    }
+
+    let userDefaults = UserDefaults.standard
+    
     var body: some View {
         List {
             ForEach(viewModel.categories, id: \.name) { category in
@@ -24,6 +30,10 @@ struct MensaView: View {
             }
         }.navigationBarTitle("Collections")
             .onAppear {
+                // ToDO Read every time
+                if let status = userDefaults.string(forKey: Keys.status.rawValue) {
+                    debugPrint(status)
+                }
                 Task(priority: .medium) {
                     do {
                         let meals = try await MockGetMealsCommand().execute(inDTO: MealQueryDTO(mensa: 42, date: Date()))
