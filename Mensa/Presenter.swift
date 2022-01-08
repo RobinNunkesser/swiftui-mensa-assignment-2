@@ -44,8 +44,6 @@ extension Meal {
             priceString = euroFormatter.string(from: NSNumber(floatLiteral: concretePrice))!
         }        
         let image = URL(string: image) ?? URL(string: "https://images.unsplash.com/photo-1546069901-ba9599a7e63c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=100&q=80")!
-        return MealViewModel(title: name, subtitle: priceString, image: image)
-        
-        
+        return MealViewModel(title: name, subtitle: priceString, image: image)                
     }
 }

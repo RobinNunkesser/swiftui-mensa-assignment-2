@@ -15,7 +15,6 @@ struct MensaView: View {
     @StateObject var viewModel = MensaViewModel()
     @State private var showError = false
     @State private var errorText = ""
-
     
     var body: some View {
         List {

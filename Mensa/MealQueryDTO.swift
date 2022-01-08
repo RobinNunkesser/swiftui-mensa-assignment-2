@@ -9,9 +9,6 @@ import Foundation
 import MealPorts
 
 struct MealQueryDTO : MealQuery {
-    var mensa: Int
-    
+    var mensa: Int    
     var date: Date
-    
-    
 }
