@@ -6,7 +6,9 @@
 //
 
 import Foundation
+import MealPorts
 
 class MensaViewModel : ObservableObject {
     @Published var categories : [CategoryViewModel] = []
+    var originalMeals : [MealCollection] = []
 }
