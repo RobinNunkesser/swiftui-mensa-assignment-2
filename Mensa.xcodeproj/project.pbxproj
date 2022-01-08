@@ -25,6 +25,7 @@
 		6F84A385278847FD00279DF1 /* MealQueryDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F84A384278847FD00279DF1 /* MealQueryDTO.swift */; };
 		6F84A38827885C1C00279DF1 /* OpenMensaMealAdapters in Frameworks */ = {isa = PBXBuildFile; productRef = 6F84A38727885C1C00279DF1 /* OpenMensaMealAdapters */; };
 		6F84A3C22789459D00279DF1 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 6F84A3C12789459D00279DF1 /* Settings.bundle */; };
+		6F84A3C4278959D800279DF1 /* AppEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F84A3C3278959D800279DF1 /* AppEnvironment.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +64,7 @@
 		6F84A380278834EB00279DF1 /* MensaViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MensaViewModel.swift; sourceTree = "<group>"; };
 		6F84A384278847FD00279DF1 /* MealQueryDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealQueryDTO.swift; sourceTree = "<group>"; };
 		6F84A3C12789459D00279DF1 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
+		6F84A3C3278959D800279DF1 /* AppEnvironment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppEnvironment.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -128,6 +130,7 @@
 				6F84A380278834EB00279DF1 /* MensaViewModel.swift */,
 				6F84A384278847FD00279DF1 /* MealQueryDTO.swift */,
 				6F84A3C12789459D00279DF1 /* Settings.bundle */,
+				6F84A3C3278959D800279DF1 /* AppEnvironment.swift */,
 			);
 			path = Mensa;
 			sourceTree = "<group>";
@@ -303,6 +306,7 @@
 				6F84A3782788338400279DF1 /* MealViewModel.swift in Sources */,
 				6F84A3762788322A00279DF1 /* SettingsView.swift in Sources */,
 				6F84A37A278833EF00279DF1 /* MealRow.swift in Sources */,
+				6F84A3C4278959D800279DF1 /* AppEnvironment.swift in Sources */,
 				6F84A2DB278714A400279DF1 /* MensaApp.swift in Sources */,
 				6F84A374278831C300279DF1 /* ContentView.swift in Sources */,
 				6F84A385278847FD00279DF1 /* MealQueryDTO.swift in Sources */,

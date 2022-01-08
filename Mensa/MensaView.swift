@@ -11,25 +11,8 @@ import MealPorts
 import OpenMensaMealAdapters
 
 struct MensaView: View {
+    @EnvironmentObject var appEnvironment : AppEnvironment
     @StateObject var viewModel = MensaViewModel()
-    
-    enum Keys : String {
-        case status = "status_preference"
-    }
-    
-    let userDefaults = UserDefaults.standard
-    
-    init() {
-        NotificationCenter.default.addObserver(self,
-                                               selector: "defaultsChanged",
-                                               name: UserDefaults.didChangeNotification,
-                                               object: nil)
-    }
-    
-    
-    func defaultsChanged(){
-        debugPrint("Changed")
-    }
     
     var body: some View {
         List {
@@ -42,11 +25,6 @@ struct MensaView: View {
             }
         }.navigationBarTitle("Collections")
             .onAppear {
-                print("ContentView appeared!")
-                // ToDO Read every time
-                if let status = userDefaults.string(forKey: Keys.status.rawValue) {
-                    debugPrint(status)
-                }
                 Task(priority: .medium) {
                     do {
                         let meals = try await MockGetMealsCommand().execute(inDTO: MealQueryDTO(mensa: 42, date: Date()))
@@ -59,6 +37,9 @@ struct MensaView: View {
                         failure(error: error)
                     }
                 }
+            }
+            .onChange(of: appEnvironment.status) { newValue in
+                print(newValue)
             }
     }
     

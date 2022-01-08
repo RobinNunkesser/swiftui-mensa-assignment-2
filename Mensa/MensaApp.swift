@@ -9,6 +9,15 @@ import SwiftUI
 
 @main
 struct MensaApp: App {
+    @Environment(\.scenePhase) private var scenePhase
+    
+    var environment = AppEnvironment()
+    
+    enum Keys : String {
+        case status = "status_preference"
+    }
+    
+    let userDefaults = UserDefaults.standard
     
     init() {
         registerDefaultsFromSettingsBundle()
@@ -33,13 +42,27 @@ struct MensaApp: App {
                 }
                 defaultsToRegister[key] = preference["DefaultValue"]
             }
-            UserDefaults.standard.register(defaults: defaultsToRegister)
+            userDefaults.register(defaults: defaultsToRegister)
         }
+    }
+    
+    func readStatus() {
+        if let status = userDefaults.string(forKey: Keys.status.rawValue) {
+            environment.status = Int(status)!
+        }
+
     }
     
     var body: some Scene {
         WindowGroup {
-            MensaView()
+            MensaView().environmentObject(environment)
+        }.onChange(of: scenePhase) {
+            switch $0 {
+            case .active: readStatus()
+            case .background, .inactive: break
+            @unknown default: break
+            }
         }
+
     }
 }
