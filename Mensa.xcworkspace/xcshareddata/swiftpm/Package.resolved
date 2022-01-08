@@ -11,24 +11,6 @@
         }
       },
       {
-        "package": "OpenMensaMealAdapters",
-        "repositoryURL": "https://github.com/Italbytz/spm-adapters-meal-openmensa.git",
-        "state": {
-          "branch": null,
-          "revision": "47d0997ac7661f180e8629f63f25595fc0ffe369",
-          "version": "0.0.2"
-        }
-      },
-      {
-        "package": "OpenMensaInfrastructure",
-        "repositoryURL": "https://github.com/Italbytz/spm-infrastructure-openmensa.git",
-        "state": {
-          "branch": null,
-          "revision": "4449c02e334d8d3d4e3e84fd6bbefcd5985c2f07",
-          "version": "0.0.5"
-        }
-      },
-      {
         "package": "CommonPorts",
         "repositoryURL": "https://github.com/Italbytz/spm-ports-common.git",
         "state": {
