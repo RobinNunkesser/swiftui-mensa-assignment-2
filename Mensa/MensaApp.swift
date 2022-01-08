@@ -39,7 +39,7 @@ struct MensaApp: App {
     
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            MensaView()
         }
     }
 }

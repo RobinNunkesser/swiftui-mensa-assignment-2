@@ -16,8 +16,20 @@ struct MensaView: View {
     enum Keys : String {
         case status = "status_preference"
     }
-
+    
     let userDefaults = UserDefaults.standard
+    
+    init() {
+        NotificationCenter.default.addObserver(self,
+                                               selector: "defaultsChanged",
+                                               name: UserDefaults.didChangeNotification,
+                                               object: nil)
+    }
+    
+    
+    func defaultsChanged(){
+        debugPrint("Changed")
+    }
     
     var body: some View {
         List {
@@ -30,6 +42,7 @@ struct MensaView: View {
             }
         }.navigationBarTitle("Collections")
             .onAppear {
+                print("ContentView appeared!")
                 // ToDO Read every time
                 if let status = userDefaults.string(forKey: Keys.status.rawValue) {
                     debugPrint(status)
@@ -37,10 +50,10 @@ struct MensaView: View {
                 Task(priority: .medium) {
                     do {
                         let meals = try await MockGetMealsCommand().execute(inDTO: MealQueryDTO(mensa: 42, date: Date()))
-/*                        let formatter = DateFormatter()
-                        formatter.dateFormat = "yyyy/MM/dd"
-                        let someDateTime = formatter.date(from: "2022/01/11")!
-                        let meals = try await GetOpenMensaMealsCommand().execute(inDTO: MealQueryDTO(mensa: 42, date: someDateTime))*/
+                        /*                        let formatter = DateFormatter()
+                         formatter.dateFormat = "yyyy/MM/dd"
+                         let someDateTime = formatter.date(from: "2022/01/11")!
+                         let meals = try await GetOpenMensaMealsCommand().execute(inDTO: MealQueryDTO(mensa: 42, date: someDateTime))*/
                         success(meals: meals)
                     } catch let error {
                         failure(error: error)
@@ -68,7 +81,7 @@ struct MensaView: View {
                 
             }))
             
-        })        
+        })
     }
     
     func failure(error: Error) {
